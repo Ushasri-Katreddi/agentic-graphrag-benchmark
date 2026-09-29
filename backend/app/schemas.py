@@ -79,3 +79,14 @@ class BenchmarkResult(BaseModel):
     trace: Optional[BenchmarkTrace] = None
 
     metadata: Dict[str, Any] = Field(default_factory=dict)
+
+class DocumentChunk(BaseModel):
+    """A searchable chunk derived from a corpus document."""
+
+    chunk_id: str
+    doc_id: str
+    title: str
+    url: str
+    chunk_index: int
+    text: str
+    approx_tokens: int
